@@ -11,7 +11,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 	// write your code here
-        String fileName = "Kaskus2.jpg";
+        if (args.length == 0){
+            System.out.println("Usage: java <executable> <filename>");
+            return;
+        }
+        String fileName = args[0];
         File file = new File(fileName);
         BufferedImage image = ImageIO.read(file);
         List<Integer> colors = new ArrayList<Integer>();
